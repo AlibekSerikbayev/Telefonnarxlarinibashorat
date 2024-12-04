@@ -84,7 +84,7 @@ def load_models(modelName):
 
 # Marka indexini olish
 def marka_index(markalar, marka):
-    index = int(markalar[markalar["brands"] == marka].index.values)
+    index = markalar[markalar["brands"] == marka].index.values[0]
     return index
 
 # Operatsion tizim uchun raqamli qiymat berish
