@@ -110,11 +110,12 @@ def create_prediction_value(cpu, dahili_hafiza, ekran_boyutu, kamera_cozunurlugu
 # Modelni bashorat qilish
 def predict_models(model, res):
     try:
-        result = str(int(model.predict(res))).strip('[]')
-        return result
+        # Modeldan bashorat olish
+        result = model.predict(res)
+        return str(result[0])  # Birinchi elementni qaytarish
     except Exception as e:
         st.error(f"Bashorat qilishda xatolik: {e}")
         return None
-
+        
 if __name__ == "__main__":
     main()
